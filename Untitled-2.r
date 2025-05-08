@@ -70,5 +70,7 @@ tabla <- data.frame(ciudad=c("A",NA,"C","D","E"),
                     sabor=c('Vainilla','Chocolate','Vainilla',NA,'Fresa'),
                     cantidad=c(5,10,NA,12,NA))
 sample <- (1:6) #vector de 1 a 6
+set.seed(1) #fijar la semilla para reproducibilidad
+sample (1:6,2) #muestra aleatoria de 2 elementos del vector 1:6
 #Tarea: función que simule el lanzamiento de dos dados
 #Función que cuente cuantos lanzamientos fueron necesarios para obtener un par
