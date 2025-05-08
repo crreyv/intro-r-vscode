@@ -30,3 +30,45 @@ Promedios <- sapply(k,mean) # Promedio de cada columna
 print(Promedios)
 Desviacion <- sapply(k,sd) # Desviación estándar de cada columna
 print(Desviacion)
+
+#08/05/2025
+a <- 5
+b <- 2*8
+y <- c(5,2,1)
+z  <- "hola"
+rm(list=ls()) #elimina todas las variables
+p <- function(a,b) {
+    return (a+b)/2 #devuelve lo que está dentro de los paréntesis
+}
+a <- 5
+b <- 12
+p(a,4) #llama a la función p con los argumentos a y 4
+conos <- data.frame (
+    ciudad = c("A", NA, "C", "D", "E"),
+    sabor = c('Vainilla', 'Chocolate', 'Vainilla', NA, 'Fresa'),
+    cantidad = c(5, 10, NA, 12, NA)
+)
+print(conos)
+numNAconos <- function(df) {
+    # Contar el número de NA en cada columna
+    numNA <- sapply(df, function(x) sum(is.na(x)))
+    return(numNA)
+}    
+print(numNAconos(conos)) #llama a la función numNAconos con el data frame 'conos'
+# Contar los NA de la columna 'sabor'
+numNA_sabor <- sum(is.na(conos$sabor))
+print(numNA_sabor)
+is.na(c(5,NA,3,4,NA))
+a <- data.frame( x=c(5,NA,3,4,NA),
+                y= c(1,2,NA,4,5))
+is.na(a) #devuelve un vector lógico indicando si hay NA en cada posición
+rm(list=ls())
+numNAdf <- function(df){
+    return(sum(is.na(df))) #devuelve el número de NA en el data frame
+}
+tabla <- data.frame(ciudad=c("A",NA,"C","D","E"),
+                    sabor=c('Vainilla','Chocolate','Vainilla',NA,'Fresa'),
+                    cantidad=c(5,10,NA,12,NA))
+sample <- (1:6) #vector de 1 a 6
+#Tarea: función que simule el lanzamiento de dos dados
+#Función que cuente cuantos lanzamientos fueron necesarios para obtener un par
