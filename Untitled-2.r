@@ -73,4 +73,27 @@ sample <- (1:6) #vector de 1 a 6
 set.seed(1) #fijar la semilla para reproducibilidad
 sample (1:6,2) #muestra aleatoria de 2 elementos del vector 1:6
 #Tarea: función que simule el lanzamiento de dos dados
-#Función que cuente cuantos lanzamientos fueron necesarios para obtener un par
+sample(1:6,2,replace=T)
+#Función que simule el lanzamiento de dos dados
+dados <- function() {
+    dado1 <- sample(1:6, 1, replace = TRUE)
+    dado2 <- sample(1:6, 1, replace = TRUE)
+    return(c(dado1, dado2)) # Devuelve ambos valores como un vector
+}
+resultado <- dados() # Llama a la función y guarda el resultado
+print(resultado)     # Muestra el resultado
+
+#Función que cuente cuantos lanzamientos fueron necesarios para obtener ambos números pares (pero no necesariamente iguales)
+lanzamiento <- function() {
+    intentos <- 0
+    repeat {
+        dado3 <- sample(1:6, 1, replace = TRUE)
+        dado4 <- sample(1:6, 1, replace = TRUE)
+        intentos <- intentos + 1
+        if (dado3 %% 2 == 0 && dado4 %% 2 == 0) break
+    }
+    return(intentos)
+}
+
+# Llama a la función y muestra el resultado
+print(lanzamiento())
